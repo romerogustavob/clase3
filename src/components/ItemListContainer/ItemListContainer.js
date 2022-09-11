@@ -20,7 +20,7 @@ const ItemListContainer = () => {
     // }
     typeof categoryid === 'undefined'? setItems(products) : setItems(products.filter(p=>p.category==categoryid))
 
-  },[])
+  },[categoryid])
   
   return (
    
