@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import ItemList from '../ItemList/ItemList'
 import products from '../Jsons/products'
@@ -7,6 +8,8 @@ import products from '../Jsons/products'
 const ItemDetailContainer = () => {
 
   const [item, setItem]= useState({})
+  const { id } =useParams()
+
 
   useEffect(() => {
     getItem().then( data =>{
@@ -23,7 +26,7 @@ const ItemDetailContainer = () => {
   const getItem = () => {
     return new Promise((resolve, reject) => {
        setTimeout(()=>{
-          resolve(products[1])
+          resolve(products[id])
        },2000);
     })
   }
