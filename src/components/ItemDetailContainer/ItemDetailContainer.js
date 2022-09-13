@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
   const getItem = () => {
     return new Promise((resolve, reject) => {
        setTimeout(()=>{
-          resolve(products[id])
+          resolve(products[id-1])
        },2000);
     })
   }
